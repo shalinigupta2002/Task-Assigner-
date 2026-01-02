@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
+
+
   "scripts": {
-    "postinstall": "npx prisma generate",
-    "start": "prisma generate && node server.js",
-    "server": "nodemon server.js"
-  },
+  "postinstall": "prisma generate",
+  "start": "node server.js",
+  "server": "nodemon server.js",
+  "dev": "nodemon server.js",
+  "prisma:generate": "prisma generate",
+  "prisma:migrate": "prisma migrate dev",
+  "prisma:studio": "prisma studio"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
