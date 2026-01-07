@@ -6,7 +6,8 @@ generator client {
 
 datasource db {
     provider  = "postgresql"
-   
+    server/prisma.config.js
+
 }
 
 enum WorkspaceRole {
