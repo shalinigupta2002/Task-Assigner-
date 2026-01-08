@@ -8,7 +8,7 @@ const syncUserCreation = inngest.createFunction(
     {event: 'clerk/user.created'},
     async ({event}) => {
         const {data} = event
-        await Prisma.user.create({
+        await prisma.user.create({
             data: {
                 id: data.id,
                 email: data?.email_addresses[0].email_address,
@@ -27,7 +27,7 @@ const syncUserDeletion = inngest.createFunction(
     {event: 'clerk/user.deleted'},
     async ({event}) => {
         const {data} = event
-        await Prisma.user.delete({
+        await prisma.user.delete({
             where: {
                 id: data.id,
                 
@@ -43,7 +43,7 @@ const syncWorkspaceCreation = inngest.createFunction(
     {event: 'clerk/workspace.created'},
     async ({event}) => {
         const {data} = event
-        await Prisma.workspace.create({
+        await prisma.workspace.create({
             data: {
                 id: data.id,
                 name: data.name,
@@ -70,7 +70,7 @@ const syncWorkspaceUpdation = inngest.createFunction(
     {event: 'clerk/organization.updated'},
     async ({event}) => {
         const {data} = event
-        await Prisma.workspace.update({
+        await prisma.workspace.update({
             where: {
                 id: data.id, 
             },
@@ -89,7 +89,7 @@ const syncUserUpdation = inngest.createFunction(
     {event: 'clerk/user.updated'},
     async ({event}) => {
         const {data} = event
-        await Prisma.user.update({
+        await prisma.user.update({
             where: {
                 id: data.id,
                 
@@ -114,7 +114,7 @@ const syncWorkspaceDeletion = inngest.createFunction(
      { event: 'clerk/organization.deleted' },
      async ({ event }) => {
          const { data } = event
-         await Prisma.workspace.delete({
+         await prisma.workspace.delete({
              where: {
                  id: data.id,
              }
