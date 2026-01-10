@@ -20,8 +20,8 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "ws": "^8.18.3",
-    "inngest": "^3.48.1"
+    "inngest": "^3.48.1",
+    "ws": "^8.18.3"
   },
   "devDependencies": {
     "@types/ws": "^8.18.1",
