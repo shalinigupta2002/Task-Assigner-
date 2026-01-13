@@ -5,7 +5,8 @@ import prisma from "../configs/prisma.js";
 
 export const getUserWorkspaces = async (req, res) => {
     try {
-        const userId = await req.auth();
+        const { userId } = await req.auth();
+        
         const workspaces = await prisma.workspace.findMany({
             where: {
                 members: {
